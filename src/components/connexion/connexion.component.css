@@ -1,0 +1,37 @@
+.container {
+  inline-size: 500px;
+  block-size: 370px;
+  border: solid 2.5px whitesmoke;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  inline-size: 450px;
+  block-size: 45px;
+  border: solid 2.5px white;
+  margin: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+button {
+  inline-size: 457px;
+  block-size: 45px;
+  border: solid 2.5px white;
+  margin: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#tout3 input[required] {
+  border-inline-end: 4px solid orange;
+}
+#tout2 input:invalid {
+  border-inline-end: 4px solid red;
+}
+#tout2 input:valid {
+  border-inline-end: 4px solid green;
+}

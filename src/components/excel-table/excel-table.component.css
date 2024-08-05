@@ -1,0 +1,48 @@
+th,
+td {
+  font-size: 20px;
+}
+
+button {
+  inline-size: 477.5px;
+  block-size: 45px;
+  border: solid 2.5px white;
+  margin: 10px 20.3px;
+  text-align: center;
+  font-size: 16px;
+  margin-inline-start: 0px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  inline-size: 30%;
+  block-size: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  inline-size: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: inline-end;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

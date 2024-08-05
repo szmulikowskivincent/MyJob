@@ -1,0 +1,168 @@
+<div align="center" style="padding: 65px">
+  <img src="assets\Image_Globe.gif" width="7%" />
+</div>
+<div
+  class="container"
+  style="inline-size: 1650px; block-size: 550px; margin: auto"
+  id="tout2"
+>
+  <form
+    [formGroup]="jobSearchForm"
+    (ngSubmit)="onSubmit()"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      block-size: 100%;
+    "
+  >
+    <div style="display: flex; justify-content: space-between">
+      <div style="inline-size: 30%">
+        <label for="companyName"></label>
+        <input
+          type="text"
+          formControlName="companyName"
+          id="companyName"
+          placeholder="Nom de l'entreprise"
+          minlength="4"
+          maxlength="25"
+          required
+        />
+      </div>
+      <div style="inline-size: 30%">
+        <label for="sector"></label>
+        <input
+          type="text"
+          formControlName="sector"
+          id="sector"
+          placeholder="Secteur d'activité"
+          minlength="2"
+          maxlength="25"
+          required
+        />
+      </div>
+      <div style="inline-size: 30%">
+        <label for="referenceNumber"></label>
+        <input
+          type="text"
+          formControlName="referenceNumber"
+          id="referenceNumber"
+          placeholder="Numéro réfèrence"
+          minlength="4"
+          maxlength="25"
+          required
+        />
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <div style="inline-size: 30%">
+        <label for="employerEmail"></label>
+        <input
+          type="email"
+          formControlName="employerEmail"
+          id="employerEmail"
+          placeholder="Adresse email employeur"
+          minlength="8"
+          maxlength="30"
+          required
+        />
+      </div>
+      <div style="inline-size: 30%">
+        <label for="phoneNumber"></label>
+        <input
+          type="tel"
+          formControlName="phoneNumber"
+          id="phoneNumber"
+          placeholder="Numéro de télèphone de l'entreprise"
+          minlength="4"
+          maxlength="15"
+          required
+        />
+      </div>
+      <div style="inline-size: 30%">
+        <label for="contactPerson"></label>
+        <input
+          type="text"
+          formControlName="contactPerson"
+          id="contactPerson"
+          placeholder="Personne de contact"
+          minlength="4"
+          maxlength="25"
+          required
+        />
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <div style="inline-size: 30%">
+        <label for="submissionDate"></label>
+        <input
+          style="inline-size: 1585px"
+          type="date"
+          formControlName="submissionDate"
+          id="submissionDate"
+          placeholder="Date d'envoi"
+          required
+        />
+      </div>
+    </div>
+    <div style="inline-size: 30%">
+      <label for="employerResponseDate"></label>
+      <input
+        style="inline-size: 1585px"
+        type="date"
+        formControlName="employerResponseDate"
+        id="employerResponseDate"
+        placeholder="Date réponse employeur"
+        required
+      />
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <div style="inline-size: 30%">
+        <label for="pdfUrl"></label>
+        <input
+          type="file"
+          formControlName="pdfUrl"
+          id="pdfUrl"
+          accept=".pdf"
+          placeholder="Fichier"
+          required
+        />
+      </div>
+      <div style="inline-size: 30%">
+        <label for="searchType"></label>
+        <select formControlName="searchTypeNote" id="searchType">
+          <option value="" disabled selected>
+            Choisir une note pour cette recherche
+          </option>
+          <option value="trés bien">Trés bien!</option>
+          <option value="bien">Bien!</option>
+          <option value="moyen">Moyen!</option>
+          <option value="satisfaisant">Satisfaisant!</option>
+          <option value="médiocre">Médiocre!</option>
+        </select>
+      </div>
+      <div style="inline-size: 30%">
+        <label for="searchType"></label>
+        <select formControlName="searchType" id="searchType">
+          <option value="" disabled selected>
+            Choisir un type de recherche
+          </option>
+          <option value="spontanée">Spontanée</option>
+          <option value="forem">FOREM</option>
+          <option value="web">VDAB</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="web">Web</option>
+        </select>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <button style="inline-size: 1590px" type="submit">Soumettre</button>
+    </div>
+    <div>
+      <button style="inline-size: 1590px" routerLink="/ecxel-table">
+        Afficher les données
+      </button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

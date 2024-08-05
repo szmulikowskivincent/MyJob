@@ -1,0 +1,15 @@
+<div class="search-container" style="margin-inline-start: 900px">
+  <form (ngSubmit)="performSearch()">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      name="searchQuery"
+      placeholder="Rechercher..."
+    />
+    <button type="submit">Rechercher</button>
+  </form>
+</div>
+
+<div *ngIf="searchResultMessage">
+  {{ searchResultMessage }}
+</div>

@@ -1,0 +1,25 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-inline-start: 600px;
+}
+
+.search-container input {
+  padding: 8px;
+  margin-inline-end: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-container button {
+  padding: 8px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: darkblue;
+}

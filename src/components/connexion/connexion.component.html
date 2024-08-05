@@ -1,0 +1,35 @@
+<div align="center" style="padding: 65px">
+  <img src="assets/Image_Globe.gif" width="7%" />
+</div>
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <br />
+    <img src="assets\logo_Forem.png" width="25%" />
+    <div id="tout2">
+      <label for="email"></label>
+      <input
+        type="email"
+        formControlName="email"
+        id="email"
+        placeholder="adresse email"
+        minlength="10"
+        maxlength="25"
+        required
+      />
+    </div>
+    <div id="tout2">
+      <label for="password"></label>
+      <input
+        type="password"
+        formControlName="password"
+        id="password"
+        placeholder="password"
+        maxlength="5"
+        maxlength="20"
+        required
+      />
+    </div>
+    <button type="submit">se connecter</button>
+  </form>
+</div>
+<app-footer></app-footer>

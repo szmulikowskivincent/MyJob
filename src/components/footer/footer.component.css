@@ -1,0 +1,9 @@
+.container {
+    inline-size: 2780px;
+    block-size: 50px;
+    border: solid 2.5px whitesmoke;
+    margin: 320px auto 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        inline-size: 100%;
+        margin-inline-start: 0px;
+        margin-inline-end: 15px;
+      }
+
+      button {
+        background-color: chartreuse;
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center" style="padding: 65px">
+      <img src="assets/Image_Globe.gif" width="7%" />
+    </div>
+    <div align="center" *ngIf="formData && formData.length > 0">
+      <div style="margin: 0 15px">
+        <table>
+          <thead>
+            <tr style="background-color: green; font-size: 16px">
+              <th style="border-block-end: 1.5px solid white">Company Name</th>
+              <th style="border-block-end: 1.5px solid white">
+                Submission Date
+              </th>
+              <th style="border-block-end: 1.5px solid white">Sector</th>
+              <th style="border-block-end: 1.5px solid white">
+                Employer Response Date
+              </th>
+              <th style="border-block-end: 1.5px solid white">Search Type</th>
+              <th style="border-block-end: 1.5px solid white">
+                Reference Number
+              </th>
+              <th style="border-block-end: 1.5px solid white">
+                Employer Email
+              </th>
+              <th style="border-block-end: 1.5px solid white">
+                Contact Person
+              </th>
+              <th style="border-block-end: 1.5px solid white">PDF URL</th>
+              <th style="border-block-end: 1.5px solid white">Score</th>
+              <th style="border-block-end: 1.5px solid white">Phone Number</th>
+              <th style="border-block-end: 1.5px solid white">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of formData; let i = index">
+              <td style="border-block-end: 1.5px solid white">
+                💻 {{ data.companyName }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                📅 {{ data.submissionDate }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                🌐 {{ data.sector }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                🗓️ {{ data.employerResponseDate }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                🔎 {{ data.searchType }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                🖇️ {{ data.referenceNumber }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                📧 {{ data.employerEmail }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                👤 {{ data.contactPerson }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                📄 <a [href]="data.pdfUrl" target="_blank">{{ data.pdfUrl }}</a>
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                👍 {{ data.searchTypeNote }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                📞 {{ data.phoneNumber }}
+              </td>
+              <td style="border-block-end: 1.5px solid white">
+                <button
+                  style="
+                    background-color: chartreuse;
+                    inline-size: 105px;
+                    block-size: 25px;
+                  "
+                  (click)="updateData(i)"
+                >
+                  Mettre à jour
+                </button>
+                <button
+                  style="
+                    background-color: red;
+                    inline-size: 105px;
+                    block-size: 25px;
+                  "
+                  (click)="deleteData(i)"
+                >
+                  Supprimer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        style="margin-block-start: 15px; display: flex; justify-content: center"
+      >
+        <button
+          style="background-color: chartreuse; margin: 0 5px"
+          (click)="encoderDonnees()"
+        >
+          Encoder les données
+        </button>
+      </div>
+    </div>
+    <div *ngIf="!formData || formData.length === 0">
+      <p>No data available</p>
+    </div>
+  </body>
+</html>
+<button
+  style="
+    background-color: rgb(210, 210, 216);
+    margin: 0 5px;
+    inline-size: 105px;
+    margin-inline-start: 25px;
+  "
+  (click)="openModal()"
+>
+  Afficher CV
+</button>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <img src="assets\Capture cv.png" alt="Capture d'écran CV" />
+  </div>
+</div>
+<app-footer></app-footer>
