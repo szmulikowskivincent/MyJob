@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       table {
-        inline-size: 100%;
+        inline-size: 95%;
         margin-inline-start: 0px;
         margin-inline-end: 15px;
       }
@@ -14,6 +14,18 @@
       button {
         background-color: chartreuse;
         margin: 0 5px;
+      }
+
+      .highlighted {
+        background-color: rgb(255, 224, 178);
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: rgb(175, 170, 170);
+      }
+
+      tbody tr:nth-child(28) {
+        background-color: orange;
       }
     </style>
   </head>
@@ -25,33 +37,80 @@
       <div style="margin: 0 15px">
         <table>
           <thead>
-            <tr style="background-color: green; font-size: 16px">
-              <th style="border-block-end: 1.5px solid white">Company Name</th>
-              <th style="border-block-end: 1.5px solid white">
+            <tr style="background-color: green; font-size: 20px">
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 25px"
+              >
+                #
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 200px"
+              >
+                Company Name
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 120px"
+              >
                 Submission Date
               </th>
-              <th style="border-block-end: 1.5px solid white">Sector</th>
-              <th style="border-block-end: 1.5px solid white">
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 180px"
+              >
+                Sector
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 140px"
+              >
                 Employer Response Date
               </th>
-              <th style="border-block-end: 1.5px solid white">Search Type</th>
-              <th style="border-block-end: 1.5px solid white">
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 125px"
+              >
+                Search Type
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 150px"
+              >
                 Reference Number
               </th>
-              <th style="border-block-end: 1.5px solid white">
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 50px"
+              >
                 Employer Email
               </th>
-              <th style="border-block-end: 1.5px solid white">
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 125px"
+              >
                 Contact Person
               </th>
-              <th style="border-block-end: 1.5px solid white">PDF URL</th>
-              <th style="border-block-end: 1.5px solid white">Score</th>
-              <th style="border-block-end: 1.5px solid white">Phone Number</th>
-              <th style="border-block-end: 1.5px solid white">Actions</th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 350px"
+              >
+                PDF URL
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 100px"
+              >
+                Score
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 135px"
+              >
+                Phone Number
+              </th>
+              <th
+                style="border-block-end: 1.5px solid white; inline-size: 200px"
+              >
+                Update-Delete
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let data of formData; let i = index">
+            <tr
+              *ngFor="let data of formData; let i = index"
+              [class.highlighted]="i === 27"
+            >
+              <td style="border-block-end: 1.5px solid white">{{ i + 1 }}</td>
               <td style="border-block-end: 1.5px solid white">
                 💻 {{ data.companyName }}
               </td>
@@ -89,22 +148,22 @@
                 <button
                   style="
                     background-color: chartreuse;
-                    inline-size: 105px;
+                    inline-size: 100px;
                     block-size: 25px;
                   "
                   (click)="updateData(i)"
                 >
-                  Mettre à jour
+                  Update
                 </button>
                 <button
                   style="
                     background-color: red;
-                    inline-size: 105px;
+                    inline-size: 100px;
                     block-size: 25px;
                   "
                   (click)="deleteData(i)"
                 >
-                  Supprimer
+                  Delete
                 </button>
               </td>
             </tr>
@@ -125,23 +184,23 @@
     <div *ngIf="!formData || formData.length === 0">
       <p>No data available</p>
     </div>
+    <button
+      style="
+        background-color: rgb(210, 210, 216);
+        margin: 0 5px;
+        inline-size: 105px;
+        margin-inline-start: 25px;
+      "
+      (click)="openModal()"
+    >
+      Afficher CV
+    </button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <img src="assets\Capture CV.png" alt="Capture d'écran CV" />
+      </div>
+    </div>
+    <app-footer></app-footer>
   </body>
 </html>
-<button
-  style="
-    background-color: rgb(210, 210, 216);
-    margin: 0 5px;
-    inline-size: 105px;
-    margin-inline-start: 25px;
-  "
-  (click)="openModal()"
->
-  Afficher CV
-</button>
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <img src="assets\Capture cv.png" alt="Capture d'écran CV" />
-  </div>
-</div>
-<app-footer></app-footer>

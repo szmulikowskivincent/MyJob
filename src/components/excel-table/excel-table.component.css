@@ -46,3 +46,10 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
+
+.highlighted {
+  background-color: rgb(255, 224, 178); 
+}
+
+
+

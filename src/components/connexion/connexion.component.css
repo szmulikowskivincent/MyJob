@@ -35,3 +35,14 @@ button {
 #tout2 input:valid {
   border-inline-end: 4px solid green;
 }
+
+.logo-container {
+  display: flex;
+  align-items: right;
+  margin-inline-start: 950px;
+}
+.logo-container a img {
+  inline-size: 150px;
+  block-size: auto;
+  border-radius: 10px;
+}
